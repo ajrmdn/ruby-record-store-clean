@@ -8,7 +8,7 @@ class Album
   end
 
   def self.all
-    returned_albums = DB.exec("SELECT * FROM albums;")
+    returned_albums = DB.exec("SELECT * FROM albums ORDER BY name;")
     albums = []
     returned_albums.each() do |album|
       name = album.fetch("name")
